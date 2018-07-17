@@ -1,0 +1,57 @@
+server:
+  tomcat:
+    uri-encoding: utf-8
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.alibaba.druid.pool.DruidDataSource
+      username: root
+      password: 123456
+      url: jdbc:mysql://106.15.40.47:3306/agile_crm_cos
+      druid:
+        initial-size: 50
+        min-idle: 50
+        max-active: 100
+        max-wait: 60000
+        time-between-eviction-runs-millis: 60000
+        min-evictable-idle-time-millis: 300000
+        validation-query: SELECT 1 FROM DUAL
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        pool-prepared-statements: true
+        max-pool-prepared-statement-per-connection-size: 20
+        use-global-data-source-stat: true
+        filter:
+          stat:
+            merge-sql: true
+            log-slow-sql: true
+            slow-sql-millis: 1000
+          slf4j:
+            enabled: true
+          wall:
+            enabled: true
+        stat-view-servlet:
+          url-pattern: /druid/*
+          login-username: admin
+          login-password: admin
+  redis:
+    database: 1
+    timeout: 5000
+    jedis:
+      pool:
+        max-idle: 100
+        min-idle: 1
+        max-active: 1000
+        max-wait: -1
+    host: 10.202.16.230
+    password: wodemima123
+
+mybatis:
+  type-aliases-package: com.example.model
