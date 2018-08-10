@@ -52,6 +52,12 @@ spring:
         max-wait: -1
     host: 10.202.16.230
     password: wodemima123
+  data:
+   elasticsearch:
+    cluster-name: elasticsearch
+    cluster-nodes: 10.202.16.230:9300,10.202.16.230:9301
 
 mybatis:
   type-aliases-package: com.example.model
+  configuration:
+    map-underscore-to-camel-case: true

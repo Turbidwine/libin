@@ -46,7 +46,7 @@ public class redisTest {
 
     @Test
     public void testSw(){
-        redisService.testTransactional("1","3");
+        //redisService.testTransactional("1","3");
         //redisTemplate.opsForValue().set("1","2");
         System.out.println(redisTemplate.opsForValue().get("1"));
     }
